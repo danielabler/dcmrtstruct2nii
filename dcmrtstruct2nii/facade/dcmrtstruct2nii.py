@@ -93,7 +93,7 @@ def dcmrtstruct2nii(rtstruct_file, dicom_file, output_path, structures=None, gzi
 
             mask.CopyInformation(dicom_image)
 
-            mask_filename = filename_converter.convert(f'mask_{rtstruct["name"]}')
+            mask_filename = filename_converter.convert(f'mask_{rtstruct['roi_number']}_{rtstruct["name"]}')
             nii_output_adapter.write(mask, f'{output_path}{mask_filename}', gzip)
 
     if convert_original_dicom:
